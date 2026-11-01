@@ -10,3 +10,5 @@ document.querySelectorAll('[data-door]').forEach(b=>b.onclick=()=>{document.quer
 function go(e,k){e.preventDefault();if(k==='pro'){const r=e.target.querySelector('select').value.toLowerCase();const f=/nurse|medical/.test(r)?'medical':/front/.test(r)?'front':'dental';document.querySelector(`[data-f=${f}]`).click()}location.hash=k==='pro'?'shifts':'contact';return false}
 document.querySelectorAll('[data-how]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-how]').forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('[data-hp]').forEach(o=>o.hidden=o.dataset.hp!==b.dataset.how);const c=document.querySelector('[data-hc]');c.textContent=b.dataset.how==='pro'?'Browse open shifts':'Post a shift';c.href=b.dataset.how==='pro'?'#shifts':'#contact'});
 addEventListener('scroll',()=>document.querySelector('.nav').classList.toggle('scrolled',scrollY>10),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
