@@ -108,3 +108,4 @@ html{scroll-behavior:smooth}
 /* fixes: device not clipped; story heights capped */
 .ahero{overflow:visible;padding-bottom:40px}.device{margin:56px auto 0}.board-sec{padding-top:90px}
 .sticky{height:min(calc(100vh - 120px),720px)}.step{min-height:min(70vh,560px)}
+.sv[hidden]{display:none}
