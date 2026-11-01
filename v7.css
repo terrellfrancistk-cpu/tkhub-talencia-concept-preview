@@ -87,3 +87,4 @@ footer#site-footer{background:#fff;color:var(--ink);border-top:1px solid var(--l
 .seg{background:#f1f1f6}.seg label{position:relative}.seg input{left:0;top:0;width:1px;height:1px}.seg label:has(input:checked){color:var(--navy);box-shadow:0 2px 10px rgba(31,27,77,.12)}
 .legend span{display:inline-flex;align-items:center;white-space:nowrap}
 .checks li:before{background:none;width:auto;height:auto;border-radius:0;box-shadow:none}
+.checks li{padding:0 0 0 28px;font-weight:400;color:var(--mut);background:none}.checks li:before{left:0;color:var(--teal-d);font-size:16px;line-height:1.5}
