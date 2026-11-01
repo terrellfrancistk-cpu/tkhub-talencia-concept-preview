@@ -88,3 +88,4 @@ footer#site-footer{background:#fff;color:var(--ink);border-top:1px solid var(--l
 .legend span{display:inline-flex;align-items:center;white-space:nowrap}
 .checks li:before{background:none;width:auto;height:auto;border-radius:0;box-shadow:none}
 .checks li{padding:0 0 0 28px;font-weight:400;color:var(--mut);background:none}.checks li:before{left:0;color:var(--teal-d);font-size:16px;line-height:1.5}
+.stores .store{background:#fff;color:var(--navy)}
