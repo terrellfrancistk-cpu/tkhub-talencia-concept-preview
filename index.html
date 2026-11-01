@@ -7,7 +7,11 @@
 <p class="eyebrow">PEOPLE FIRST. TECHNOLOGY FORWARD.™</p>
 <h1>A platform when you want it.<br><span>A person when you need one.</span></h1>
 <p class="lead">Dental, medical, and non-clinical staffing from a Texas team that has been placing healthcare talent since 1979. Find shifts, fill shifts, and talk to a real recruiter.</p>
-<div class="ctas"><a class="btn" href="#workers">I'm a professional</a><a class="btn ghost" href="#clients">I need staff</a></div>
+<div class="door" role="tablist" aria-label="Choose your path">
+<button role="tab" aria-selected="true" data-door="pro">I'm a professional</button><button role="tab" aria-selected="false" data-door="office">I need staff</button></div>
+<form class="quick" data-panel="pro" onsubmit="return go(event,'pro')"><label class="sr">Your role</label><select aria-label="Your role"><option>Dental Hygienist</option><option>Dental Assistant</option><option>Registered Nurse</option><option>Medical Assistant</option><option>Front Office</option></select><input aria-label="ZIP code" inputmode="numeric" placeholder="ZIP" maxlength="5" value="75225"><button class="btn">See my shifts →</button></form>
+<form class="quick" data-panel="office" hidden onsubmit="return go(event,'office')"><select aria-label="Role needed"><option>Hygienist</option><option>Assistant</option><option>RN</option><option>MA</option><option>Front Office</option></select><input aria-label="Date needed" type="date"><button class="btn">Post this shift →</button></form>
+<p class="micro">Free to join · W-2 with benefits · a real recruiter responds today</p>
 <ul class="stats"><li><b>1979</b>Founded as KAD</li><li><b>Temp · Temp-to-hire · Perm</b>Every way to work</li><li><b>Texas roots</b>National reach</li></ul></div>
 <div class="phone"><div class="screen"><div class="ph-top">Good morning, Jordan</div><div class="card hl"><small>URGENT · TOMORROW</small><b>Hygienist · Plano</b><span>7:30a–4:00p · $52/hr</span><i>Claim shift</i></div><div class="card"><small>THURSDAY</small><b>Dental Assistant · Frisco</b><span>8:00a–5:00p · $28/hr</span></div><div class="card"><small>REWARDS</small><b>340 pts · Silver</b><span>1 pt per hour worked</span></div><div class="clock">● Clock in (at office)</div></div></div></div></section>
 <section id="workers" class="sec"><div class="wrap"><p class="eyebrow">FOR HEALTHCARE PROFESSIONALS</p><h2>Work on your terms, with a team that has your back.</h2>

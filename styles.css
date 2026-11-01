@@ -30,3 +30,11 @@ blockquote{margin:0;background:#fff;border-left:5px solid var(--t);padding:26px;
 form{display:grid;gap:12px;background:var(--bg);padding:24px;border-radius:16px}label{display:grid;gap:4px;font-weight:600;font-size:14px;color:var(--sl)}input,select,textarea{padding:11px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}
 footer{background:#111;color:#cbd5e1;padding:40px 0;text-align:center}footer img{height:38px;filter:brightness(0) invert(1)}
 @media(max-width:860px){.grid2{grid-template-columns:1fr}.cards3,.board{grid-template-columns:1fr}.nav nav a:not(.btn){display:none}.phone{transform:scale(.9)}}
+/* R1 dual-path hero */
+.door{display:inline-flex;background:#e6eef6;border-radius:999px;padding:5px;margin:22px 0 12px}
+.door button{border:0;background:none;padding:11px 20px;border-radius:999px;font:700 15px system-ui;color:var(--sl);cursor:pointer}
+.door [aria-selected=true]{background:#fff;color:var(--b);box-shadow:0 2px 10px rgba(6,106,171,.18)}
+.quick{display:flex;gap:8px;background:#fff;padding:8px;border-radius:18px;box-shadow:0 12px 30px rgba(6,106,171,.14);max-width:560px;flex-wrap:wrap}
+.quick select,.quick input{flex:1;min-width:120px;border:0;background:var(--bg);padding:13px;border-radius:12px;font:inherit}
+.quick[hidden]{display:none}.micro{font-size:13px;color:#64748b;margin:10px 0 24px}.sr{position:absolute;left:-9999px}
+:focus-visible{outline:3px solid var(--t);outline-offset:2px}
