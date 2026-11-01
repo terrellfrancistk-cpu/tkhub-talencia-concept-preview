@@ -38,3 +38,16 @@ footer{background:#111;color:#cbd5e1;padding:40px 0;text-align:center}footer img
 .quick select,.quick input{flex:1;min-width:120px;border:0;background:var(--bg);padding:13px;border-radius:12px;font:inherit}
 .quick[hidden]{display:none}.micro{font-size:13px;color:#64748b;margin:10px 0 24px}.sr{position:absolute;left:-9999px}
 :focus-visible{outline:3px solid var(--t);outline-offset:2px}
+/* R2 live board + claim sheet */
+.filters button{padding:8px 16px;border-radius:999px;border:1px solid #cbd5e1;background:#fff;font:600 14px system-ui;cursor:pointer}
+.filters .on{background:var(--b);color:#fff;border-color:var(--b)}
+.shift{transition:transform .2s,box-shadow .2s}.shift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(6,106,171,.12)}
+dialog{border:0;border-radius:24px;padding:0;max-width:440px;width:calc(100% - 24px);box-shadow:0 30px 80px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(7,9,12,.55);backdrop-filter:blur(4px)}
+.sh{padding:28px;display:grid;gap:12px;position:relative;background:#fff}.sh h3{margin:0;font-size:24px}.sh-d{margin:0;color:var(--sl2)}
+.x{position:absolute;right:14px;top:10px;border:0;background:none;font-size:28px;cursor:pointer;color:#64748b}
+.wide{width:100%;margin-top:10px}.done{font-weight:700;color:#0f766e;font-size:17px}
+#st1 label,#st2 label{display:grid;gap:6px}
+@media(max-width:600px){dialog{margin:auto 12px 12px;max-height:90vh}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
