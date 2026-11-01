@@ -83,3 +83,12 @@ html{scroll-behavior:smooth}
 .device-screen{height:100%;border-radius:42px;overflow:hidden;background:var(--bg)}.device-screen .screen{height:100%;border-radius:0;text-align:left}
 .slot-tag{position:absolute;top:-34px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#64748b;border:1px dashed #94a3b8;border-radius:999px;padding:4px 12px;background:#fff}
 .board-sec{margin-top:0;padding-top:180px}
+/* S2R2 sticky scroll product story */
+.story{padding:120px 0}.big2{font-size:clamp(36px,5.5vw,72px);line-height:1.02;letter-spacing:-.03em}.big2 span{color:#86868b}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:40px}
+.sticky{position:sticky;top:90px;height:calc(100vh - 120px);display:flex;align-items:center;justify-content:center}
+.device.sm{margin:0;width:min(300px,70vw)}.sv{animation:fade .5s}@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.step{min-height:70vh;display:flex;flex-direction:column;justify-content:center;opacity:.25;transition:opacity .4s}.step.on{opacity:1}
+.step .n{font:800 15px system-ui;color:var(--t)}.step h3{font-size:clamp(30px,3.6vw,48px);letter-spacing:-.02em;margin:8px 0}.step p{font-size:20px;color:var(--sl2);max-width:440px}
+@media(max-width:860px){.story-grid{grid-template-columns:1fr}.sticky{position:static;height:auto}.step{min-height:auto;opacity:1;padding:28px 0}.sticky{display:none}}
+@media(prefers-reduced-motion:reduce){.step{opacity:1}}

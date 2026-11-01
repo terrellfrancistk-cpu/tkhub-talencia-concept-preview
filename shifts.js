@@ -13,3 +13,5 @@ addEventListener('scroll',()=>document.querySelector('.nav').classList.toggle('s
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('[name=who]').forEach(r=>r.onchange=()=>{document.querySelectorAll('[data-w]').forEach(d=>{d.hidden=d.dataset.w!==r.value;d.querySelectorAll('[required],.full input').forEach(i=>i.required=!d.hidden)});document.querySelector('.go').textContent=r.value==='office'?'Post shift: recruiter calls today':'Create my profile'});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const i=e.target.dataset.s;document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',s===e.target));document.querySelectorAll('.sv').forEach(v=>v.hidden=v.dataset.v!==i)}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('.step').forEach(s=>so.observe(s));document.querySelector('.step')?.classList.add('on');
