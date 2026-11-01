@@ -109,3 +109,4 @@ html{scroll-behavior:smooth}
 .ahero{overflow:visible;padding-bottom:40px}.device{margin:56px auto 0}.board-sec{padding-top:90px}
 .sticky{height:min(calc(100vh - 120px),720px)}.step{min-height:min(70vh,560px)}
 .sv[hidden]{display:none}
+footer img{filter:none!important;height:34px;background:#fff;padding:10px 16px;border-radius:14px;box-sizing:content-box;display:inline-block}
