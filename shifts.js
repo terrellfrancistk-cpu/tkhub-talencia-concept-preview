@@ -15,3 +15,14 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('[name=who]').forEach(r=>r.onchange=()=>{document.querySelectorAll('[data-w]').forEach(d=>{d.hidden=d.dataset.w!==r.value;d.querySelectorAll('[required],.full input').forEach(i=>i.required=!d.hidden)});document.querySelector('.go').textContent=r.value==='office'?'Post shift: recruiter calls today':'Create my profile'});
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const i=e.target.dataset.s;document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',s===e.target));document.querySelectorAll('.sv').forEach(v=>v.hidden=v.dataset.v!==i)}),{rootMargin:'-45% 0px -45% 0px'});
 document.querySelectorAll('.step').forEach(s=>so.observe(s));document.querySelector('.step')?.classList.add('on');
+// auth (demo only)
+const au=document.getElementById('auth');
+function pane(n){au.querySelectorAll('[data-pane]').forEach(p=>p.hidden=p.dataset.pane!==n);const t=n==='in'||n==='up';au.querySelector('.au-tabs').hidden=!t;if(t)au.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===n))}
+function openAuth(n){pane(n);if(!au.open)au.showModal()}
+au.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>pane(b.dataset.tab));
+au.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>{au.close();history.replaceState(null,'',location.pathname)});
+au.querySelectorAll('.eye').forEach(b=>b.onclick=()=>{const i=b.previousElementSibling,s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Hide':'Show';b.setAttribute('aria-pressed',s)});
+au.querySelectorAll('[data-demo]').forEach(b=>b.onclick=()=>pane(b.dataset.demo==='magic'?'done':'verify'));
+au.querySelectorAll('form[data-f]').forEach(f=>f.onsubmit=e=>{e.preventDefault();pane(f.dataset.f==='verify'?'done':'verify')});
+function route(){const m={'#signin':'in','#signup':'up','#verify':'verify'}[location.hash];if(m)openAuth(m)}
+addEventListener('hashchange',route);route();
