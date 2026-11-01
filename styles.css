@@ -100,3 +100,8 @@ html{scroll-behavior:smooth}
 .tile.dark{background:#0b0f14;color:#fff}.tile.dark p{color:#a8b3c2}.tile.teal{background:linear-gradient(135deg,var(--t),var(--b));color:#fff}.tile.teal p,.tile.teal small{color:#e0f7fa}
 .mini-post{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#161b22;padding:10px;border-radius:16px}.mini-post span{background:#222a33;padding:8px 12px;border-radius:10px;font-size:14px}.mini-post .btn{margin-left:auto}
 @media(max-width:860px){.bento{grid-template-columns:1fr}.t-wide{grid-column:auto}}
+/* S2R4 single closing chapter: statement + app + dual-intent form */
+.close-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.formcard form{background:#fff;color:var(--ink);box-shadow:0 30px 80px rgba(47,185,204,.18)}
+.addr{color:#a8b3c2;margin-top:28px}.addr a{color:#4FC3E8}.chapter .tiny{color:#8b949e}
+@media(max-width:860px){.close-grid{grid-template-columns:1fr}}
