@@ -92,3 +92,11 @@ html{scroll-behavior:smooth}
 .step .n{font:800 15px system-ui;color:var(--t)}.step h3{font-size:clamp(30px,3.6vw,48px);letter-spacing:-.02em;margin:8px 0}.step p{font-size:20px;color:var(--sl2);max-width:440px}
 @media(max-width:860px){.story-grid{grid-template-columns:1fr}.sticky{position:static;height:auto}.step{min-height:auto;opacity:1;padding:28px 0}.sticky{display:none}}
 @media(prefers-reduced-motion:reduce){.step{opacity:1}}
+/* S2R3 offices bento */
+.offices{background:var(--bg);padding:120px 0}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}.t-wide{grid-column:span 2}
+.tile{background:#fff;border-radius:28px;padding:36px;min-height:260px;display:flex;flex-direction:column;gap:8px}.tile small{color:var(--t);font-weight:800;letter-spacing:.12em;font-size:12px}
+.tile h3{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.02em;margin:0;line-height:1.1}.tile p{color:var(--sl2);margin:0;font-size:17px}
+.tile.dark{background:#0b0f14;color:#fff}.tile.dark p{color:#a8b3c2}.tile.teal{background:linear-gradient(135deg,var(--t),var(--b));color:#fff}.tile.teal p,.tile.teal small{color:#e0f7fa}
+.mini-post{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#161b22;padding:10px;border-radius:16px}.mini-post span{background:#222a33;padding:8px 12px;border-radius:10px;font-size:14px}.mini-post .btn{margin-left:auto}
+@media(max-width:860px){.bento{grid-template-columns:1fr}.t-wide{grid-column:auto}}
