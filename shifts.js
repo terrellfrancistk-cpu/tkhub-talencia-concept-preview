@@ -12,3 +12,4 @@ document.querySelectorAll('[data-how]').forEach(b=>b.onclick=()=>{document.query
 addEventListener('scroll',()=>document.querySelector('.nav').classList.toggle('scrolled',scrollY>10),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[name=who]').forEach(r=>r.onchange=()=>{document.querySelectorAll('[data-w]').forEach(d=>{d.hidden=d.dataset.w!==r.value;d.querySelectorAll('[required],.full input').forEach(i=>i.required=!d.hidden)});document.querySelector('.go').textContent=r.value==='office'?'Post shift: recruiter calls today':'Create my profile'});
