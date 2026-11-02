@@ -114,3 +114,19 @@ body.ms-lock{overflow:hidden;touch-action:none}
 .hold{position:relative;overflow:hidden}.hold i{position:absolute;inset:0;background:rgba(91,200,214,.45);transform:scaleX(0);transform-origin:left;pointer-events:none}.hold.h i{transform:scaleX(1);transition:transform 1s linear}
 .bar{height:10px;background:var(--soft);border-radius:9px;overflow:hidden;margin:10px 0}.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--teal));border-radius:9px}
 @media (prefers-reduced-motion:reduce){.seg-ind,.hold.h i{transition:none}}
+
+/* v8.4 in-place sign in / create account */
+.mode{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--soft);border-radius:999px;padding:3px;margin:18px 0 6px}
+.mode button{position:relative;z-index:1;min-height:40px;border:0;background:none;font:600 14px var(--f);color:var(--mute);cursor:pointer;border-radius:999px;transition:color .3s}
+.mode button[aria-selected=true]{color:#1F1B4D}
+.mode-ind{position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);background:#fff;border-radius:999px;box-shadow:0 2px 8px rgba(31,27,77,.12);transition:transform .35s cubic-bezier(.3,.7,.2,1)}
+.mode-ind:after{content:"";position:absolute;left:35%;right:35%;bottom:4px;height:2px;border-radius:2px;background:#5BC8D6}
+.cp-card.join .mode-ind{transform:translateX(100%)}
+.jx{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s cubic-bezier(.3,.7,.2,1),opacity .3s}
+.jx>div{overflow:hidden;min-height:0}
+.cp-card.join .jx{grid-template-rows:1fr;opacity:1}
+.cp-card [data-swapt]{transition:opacity .18s}
+.cp-card.fade [data-swapt]{opacity:0}
+.cp-card .jo,.cp-card.join .si{display:none}.cp-card.join .jo{display:inline}
+.cp-card.join .mfa,.cp-card.join [data-magic],.cp-card.join .ok-msg[id^=mg]{display:none!important}
+@media (prefers-reduced-motion:reduce){.jx,.mode-ind,.cp-card [data-swapt]{transition:none}}

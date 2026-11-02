@@ -37,9 +37,19 @@ function bind(A){$$('form[data-cpf]',A).forEach(f=>f.onsubmit=e=>{e.preventDefau
 const go=k=>{sessionStorage['pt-'+k]=1;setTab(k);scrollTo(0,0)};
 $$('[data-seg]').forEach(b=>{b.onclick=()=>setTab(b.dataset.seg,1);b.onkeydown=e=>{if(/Arrow(Left|Right)/.test(e.key)){const k=cur==='practices'?'professionals':'practices';setTab(k,1);$('#tb-'+k).focus()}}});
 $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$$('[data-magic]').forEach(b=>b.onclick=()=>$('#mg-'+b.dataset.magic).classList.add('show'));
-$$('.cp-pw').forEach(f=>f.onsubmit=e=>{e.preventDefault();const m=$('.mfa',f);if(m.hidden){m.hidden=false;$('input',m).focus();f.querySelector('[type=submit]').textContent='Verify code'}else go(f.dataset.k)});
+
+const TX={practices:{signin:['Client portal','For dental practices & medical facilities. Request talent, approve time, pay invoices.','Sign in'],join:['Create a practice account','Set up your practice in a minute. Request talent the same day.','Create account']},professionals:{signin:['Talent portal','For hygienists, assistants, dentists & clinicians. Claim shifts, track pay, manage credentials.','Sign in'],join:['Join Talencia','Create your free profile. Claim shifts, get paid weekly, earn rewards.','Create account']}};
+let mode='signin';
+function setMode(m,push,anim){mode=m;['practices','professionals'].forEach(k=>{const C=$('#lg-'+k),t=TX[k][m],f=$('.cp-pw',C),b=f.querySelector('[type=submit]');
+ const apply=()=>{$('h1',C).textContent=t[0];$('h1+p',C).textContent=t[1];b.textContent=t[2];$('.mfa',f).hidden=true;$('#p-'+k).autocomplete=m==='join'?'new-password':'current-password';$('#p-'+k).placeholder=m==='join'?'Create a password (demo)':'Any demo password';C.classList.remove('fade')};
+ C.classList.toggle('join',m==='join');$$('.mode [data-mode]',C).forEach(x=>{const on=x.dataset.mode===m;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1});
+ if(anim&&!matchMedia('(prefers-reduced-motion:reduce)').matches){C.classList.add('fade');setTimeout(apply,180)}else apply()});
+ if(push){const u=new URL(location);m==='join'?u.searchParams.set('mode','join'):u.searchParams.delete('mode');history.replaceState(null,'',u.pathname+u.search+location.hash)}}
+['practices','professionals'].forEach(k=>{const C=$('#lg-'+k);['h1','h1+p'].forEach(s=>$(s,C).setAttribute('data-swapt',''));$('.cp-pw [type=submit]',C).setAttribute('data-swapt','')});
+$$('[data-mode]').forEach(b=>b.onclick=()=>{if(b.dataset.mode!==mode)setMode(b.dataset.mode,1,1)});
+$$('.cp-pw').forEach(f=>f.onsubmit=e=>{e.preventDefault();if(mode==='join')return go(f.dataset.k);const m=$('.mfa',f);if(m.hidden){m.hidden=false;$('input',m).focus();f.querySelector('[type=submit]').textContent='Verify code'}else go(f.dataset.k)});
 $$('[data-out]').forEach(b=>b.onclick=()=>{sessionStorage.removeItem('pt-'+b.dataset.out);setTab(b.dataset.out)});
 $$('[data-swap]').forEach(b=>b.onclick=()=>setTab(cur==='practices'?'professionals':'practices',1));
-const q=new URLSearchParams(location.search).get('tab'),h=location.hash.slice(1);let k=/^pro/.test(q||h)?'professionals':/^prac|^client/.test(q||h)?'practices':(sessionStorage.ptLast||'practices');
-if(/demo/.test(h))sessionStorage['pt-'+k]=1;setTab(k);addEventListener('beforeunload',()=>sessionStorage.ptLast=cur);
+const Q=new URLSearchParams(location.search),q=Q.get('tab'),h=location.hash.slice(1);let k=/^pro/.test(q||h)?'professionals':/^prac|^client/.test(q||h)?'practices':(sessionStorage.ptLast||'practices');
+if(Q.get('mode')==='join'){sessionStorage.removeItem('pt-'+k);setMode('join')}else setMode('signin');if(/demo/.test(h))sessionStorage['pt-'+k]=1;setTab(k);addEventListener('beforeunload',()=>sessionStorage.ptLast=cur);
 seg.style.visibility='visible'})();
