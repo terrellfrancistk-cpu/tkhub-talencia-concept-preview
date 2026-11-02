@@ -105,3 +105,15 @@
 .lane-cta{margin-top:18px;align-self:flex-start}
 @media(max-width:800px){.lanes{grid-template-columns:1fr;gap:14px;margin-top:32px}.lane{padding:22px 16px 22px}.lane-cta{align-self:stretch;text-align:center}}
 @media(max-width:600px){#services .lead:after{content:none}}
+/* v10.1: desktop app section — headline top-aligns with the phone, breathing room before the feature list */
+@media(min-width:901px){
+ .demo-grid{align-items:start;grid-template-rows:auto 1fr}
+ .demo-copy{align-self:start;padding-top:35px}
+ .demo-more{align-self:start;margin-top:44px}
+}
+/* v10.2: map card — legend gets inner padding (no clipping on mobile), map + legend centered in the card; "Same day" stays on one line */
+.map-box{display:flex;flex-direction:column;justify-content:center}
+.map-legend{padding:4px 22px 20px;gap:10px 18px}
+.panel .num{grid-template-columns:auto auto;justify-content:start;column-gap:24px}
+.panel .num b,.panel .num span{white-space:nowrap}
+@media(max-width:600px){.map-legend{padding:4px 16px 16px}}
