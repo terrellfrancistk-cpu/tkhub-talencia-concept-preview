@@ -23,6 +23,9 @@ $$('.faq-tabs button').forEach(b=>b.addEventListener('click',()=>{$$('.faq-tabs 
 const cnt=el=>{const raw=el.textContent.trim(),m=raw.match(/^([^0-9]*)([\d,]+)(.*)$/);if(!m)return;const to=+m[2].replace(/,/g,''),comma=m[2].includes(',');el.dataset.done=1;
  if(RM)return;const t0=performance.now(),D=1400;const f=t=>{const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3),v=Math.round(to*e);el.textContent=m[1]+(comma?v.toLocaleString('en-US'):v)+m[3];if(p<1)requestAnimationFrame(f)};el.textContent=m[1]+'0'+m[3];requestAnimationFrame(f)};
 
+/* --- v10.4 history timeline: rail fills and milestones light up as they cross 60% of the viewport --- */
+const tl=$('.tl');if(tl){const its=$$('.tl-i',tl);const tlu=()=>{const r=tl.getBoundingClientRect(),y=innerHeight*.6,t=parseFloat(getComputedStyle(tl).getPropertyValue('--t')),len=its[its.length-1].offsetTop-its[0].offsetTop;tl.style.setProperty('--len',len+'px');tl.style.setProperty('--p',RM?1:Math.max(0,Math.min(1,(y-r.top-t)/len)).toFixed(3));its.forEach(i=>i.classList.toggle('lit',RM||i.getBoundingClientRect().top+24<y))};tlu();addEventListener('scroll',()=>requestAnimationFrame(tlu),{passive:true});addEventListener('resize',tlu)}
+
 if(RM||!('IntersectionObserver'in window))return;
 
 /* --- play-once staggered reveals: animate in the first time, then stay --- */
