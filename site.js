@@ -14,7 +14,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.dd.open').forEa
 // reveal
 if(!rm&&'IntersectionObserver'in window){$$('.rv').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')});const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});$$('.rv').forEach(el=>io.observe(el))}else $$('.rv').forEach(e=>e.classList.add('in'));
 // auth
-const au=$('#auth');$$('[data-signin]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();au.showModal()}));if(au){$$('[data-close]',au).forEach(b=>b.onclick=()=>au.close());$$('.sso',au).forEach(b=>b.onclick=()=>{$('#au-msg').textContent='Demo only: '+b.dataset.p+' sign-in is not connected in this concept.'})}
+const au=$('#auth');$$('[data-signin]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();location.href=new URL('portal/?tab='+(/apply/i.test(b.textContent)?'professionals':(sessionStorage.ptLast||'practices')),document.baseURI)}));if(au){$$('[data-close]',au).forEach(b=>b.onclick=()=>au.close());$$('.sso',au).forEach(b=>b.onclick=()=>{$('#au-msg').textContent='Demo only: '+b.dataset.p+' sign-in is not connected in this concept.'})}
 if(location.hash==='#signin'&&au)au.showModal();
 // demo forms
 $$('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const m=$('.ok-msg',f);m.classList.add('show');m.focus()}));
