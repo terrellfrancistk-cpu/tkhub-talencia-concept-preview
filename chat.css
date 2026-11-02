@@ -61,3 +61,11 @@
 .tc-foot a{color:#14606a}
 .tc-rel{margin:12px 0 0!important;font-size:13px!important;color:#6e6e73!important}.tc-rel a{color:#14606a}
 .tc-list{list-style:none;margin:0 0 12px;padding:0}.tc-list li{border-top:1px solid #eef1f4}.tc-list a{display:block;padding:9px 0;font-size:14px;font-weight:600;color:var(--navy,#1F1B4D);text-decoration:none}.tc-list a:hover{color:#14606a}
+/* v13.5: keep the chat button out of the content. On phones it docks inside the bottom Find work / Request talent bar; on tablets/foldables it shrinks into the corner gutter */
+@media(max-width:1180px){.tc-launch{width:48px;height:48px;right:14px;bottom:14px}.tc-launch svg{width:22px;height:22px}.tc-launch i{top:3px;right:3px;width:10px;height:10px}.tc-teaser{right:14px;bottom:72px;max-width:230px;font-size:14px}}
+@media(max-width:900px){
+ body:not(.tc-open) .tc-launch{bottom:calc(14px + env(safe-area-inset-bottom));right:12px;width:44px;height:44px;box-shadow:0 6px 16px -6px rgba(31,27,77,.5)}
+ .thumb{padding-right:66px!important}
+ .tc-teaser{right:12px;bottom:calc(76px + env(safe-area-inset-bottom))}
+}
+@media(max-width:1180px){.tc-teaser{display:none!important}}

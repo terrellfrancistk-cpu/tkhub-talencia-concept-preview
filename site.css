@@ -352,3 +352,9 @@ section{padding:64px 20px}.c{padding:64px 20px}
 }
 /* v12: section labels ("Texas roots. National reach.") were 14px and easy to miss; scale up with the viewport */
 .eyebrow{font-size:clamp(16px,1.35vw,19px);font-weight:650;letter-spacing:.005em;margin-bottom:12px}
+/* v13.5: selected served state gets a visible teal outline (navy-on-navy was invisible) */
+#usmap .st.sel,#usmap .st.sel:hover,#usmap .st.sel:focus{stroke:#5BC8D6;stroke-width:2.5px;vector-effect:non-scaling-stroke;paint-order:stroke;filter:drop-shadow(0 0 3px rgba(91,200,214,.55))}
+#usmap .st:hover,#usmap .st:focus{vector-effect:non-scaling-stroke}
+/* v13.5: zoomed states (overflow:visible on mobile) were drawing over the legend; keep the legend on its own opaque layer */
+.map-legend{position:relative;z-index:2;background:#fff;padding-top:12px!important;margin-top:0;border-top:1px solid var(--line)}
+.map-box #usmap{position:relative;z-index:1}

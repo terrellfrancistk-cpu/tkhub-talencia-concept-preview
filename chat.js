@@ -143,5 +143,5 @@ if(S.open||location.hash==='#chat')setOpen(true);
 /* one gentle prompt per session, after the visitor has had time to look around */
 else if(!S.seen)setTimeout(()=>{if(!P.hidden||S.seen)return;S.seen=true;save();teaser=d.createElement('div');teaser.className='tc-teaser';teaser.setAttribute('role','status');
  teaser.innerHTML='<b>Questions?</b>Quick answers here, and a real person is one tap away.<button type="button" aria-label="Dismiss">×</button>';
- teaser.onclick=e=>{if(e.target.tagName==='BUTTON'){teaser.remove();return}setOpen(true)};d.body.append(teaser)},12000);
+ teaser.onclick=e=>{if(e.target.tagName==='BUTTON'){teaser.remove();return}setOpen(true)};d.body.append(teaser);setTimeout(()=>teaser&&teaser.remove(),7000)},12000);
 })();
