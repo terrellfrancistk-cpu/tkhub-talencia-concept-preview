@@ -76,3 +76,32 @@
 .feat{margin:12px 0 0}.feat li{padding:8px 0}
 .try-here{margin:0 0 12px;text-align:center;font-weight:600;color:var(--teal-d);font-size:15px}
 @media(max-width:900px){.demo-sec{padding:40px 18px 44px}.demo-more{margin-bottom:18px}}
+/* v10 round 1: proof rail in the first fold (replaces the stats band) */
+.proof{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin:8px auto 0;padding:0}
+.proof li{display:flex;flex-direction:column;gap:2px;padding:6px 12px;border-left:1px solid #e3e6ec}.proof li:first-child{border-left:0}
+.proof b{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
+.proof span{font-size:13px;color:var(--mute);letter-spacing:.01em}
+@media(max-width:700px){.proof{grid-template-columns:repeat(2,1fr);row-gap:14px}.proof li:nth-child(3){border-left:0}}
+.hx{padding-top:clamp(56px,7vw,88px)}.hx .hx-h{margin-bottom:16px}.hx .hx-lead{margin-bottom:28px}
+/* v10 round 2: compliance checks sit under the quick start (Why section removed) */
+.qs-trust{margin-top:18px}
+/* v10 round 4: services as two audience lanes (mirrors the hero fork) */
+.lanes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;text-align:left}
+.lane{border-radius:28px;padding:30px 26px 28px;display:flex;flex-direction:column}
+.lane.prac{background:radial-gradient(120% 90% at 100% 0%,#3a3390 0,var(--navy) 60%);color:#fff}
+.lane.pro{background:#fff;box-shadow:inset 0 0 0 1.5px #d9e9ec}
+.lane-k{margin:0 0 10px 6px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#14606a}.prac .lane-k{color:var(--teal)}
+.lrow{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;padding:16px 8px;border-top:1px solid #e8eef1;text-decoration:none;color:inherit;border-radius:14px;transition:background-color .2s}
+.prac .lrow{border-top-color:rgba(255,255,255,.12)}
+.lane-k+.lrow{border-top-color:transparent}
+.lrow:hover{background:#f2f8f9}.prac .lrow:hover{background:rgba(255,255,255,.07)}
+.lrow .ico{width:44px;height:44px;margin:0;border-radius:12px;display:grid;place-items:center;background:#E6F6F8;color:#1C8FA0}
+.prac .lrow .ico{background:rgba(91,200,214,.18);color:var(--teal)}
+.lrow .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lt b{display:block;font-size:18px;letter-spacing:-.01em;color:var(--navy)}.prac .lt b{color:#fff}
+.lt span{font-size:15px;color:var(--mute)}.prac .lt span{color:#c9c7e0}
+.lgo{font-size:20px;color:#14606a;transition:transform .25s cubic-bezier(.2,.7,.2,1)}.prac .lgo{color:var(--teal)}
+.lrow:hover .lgo{transform:translateX(4px)}
+.lane-cta{margin-top:18px;align-self:flex-start}
+@media(max-width:800px){.lanes{grid-template-columns:1fr;gap:14px;margin-top:32px}.lane{padding:22px 16px 22px}.lane-cta{align-self:stretch;text-align:center}}
+@media(max-width:600px){#services .lead:after{content:none}}
