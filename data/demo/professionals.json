@@ -1,0 +1,214 @@
+{
+ "account": {
+  "name": "Maya",
+  "meta": "RDH · Dallas, TX · Worker #DEMO-7781"
+ },
+ "shifts": [
+  {
+   "id": "demo-s-1",
+   "title": "Hygienist · Lakeside Dental",
+   "meta": "Tue Nov 3 · 8a–5p · 4.2 mi",
+   "rate": "$58/hr"
+  },
+  {
+   "id": "demo-s-2",
+   "title": "Hygienist · Oak Lawn Smiles",
+   "meta": "Thu Nov 5 · 7a–3p · 6.8 mi",
+   "rate": "$55/hr"
+  },
+  {
+   "id": "demo-s-3",
+   "title": "Hygienist · Plano Family Dental",
+   "meta": "Sat Nov 7 · 8a–1p · 18 mi",
+   "rate": "$62/hr · weekend"
+  }
+ ],
+ "schedule": [
+  {
+   "title": "Mon Nov 2 · Lakeside Dental",
+   "meta": "8:00a–5:00p · Dr. Lee",
+   "status": "Confirmed",
+   "tone": ""
+  },
+  {
+   "title": "Wed Nov 4 · Elm St Pediatric",
+   "meta": "7:30a–4:00p",
+   "status": "Confirmed",
+   "tone": ""
+  },
+  {
+   "title": "Nov 9–13 · Lakeside Dental",
+   "meta": "Temp-to-hire trial",
+   "status": "Pending",
+   "tone": "w"
+  }
+ ],
+ "pay": {
+  "today": 287.12,
+  "kpis": [
+   [
+    "$1,412",
+    "This week"
+   ],
+   [
+    "Fri Nov 6",
+    "Pays by"
+   ],
+   [
+    "$6,880",
+    "October total"
+   ]
+  ],
+  "weekPct": 71,
+  "weekNote": "24.5 of 34.5 scheduled hours worked",
+  "rows": [
+   {
+    "title": "Oct 30 · Lakeside Dental",
+    "meta": "8.5 hr × $58",
+    "status": "$493.00",
+    "tone": ""
+   },
+   {
+    "title": "Oct 29 · Oak Lawn Smiles",
+    "meta": "8 hr × $55 · paid Nov 6",
+    "status": "$440.00",
+    "tone": "n"
+   }
+  ]
+ },
+ "timesheet": {
+  "today": {
+   "title": "Today · Lakeside Dental",
+   "meta": "Shift 8:00a–5:00p · on-site check is a demo"
+  },
+  "rows": [
+   {
+    "title": "Oct 30 · 8:02a–5:04p",
+    "meta": "8.5 hr",
+    "status": "Approved",
+    "tone": ""
+   },
+   {
+    "title": "Oct 29 · 7:58a–4:31p",
+    "meta": "8.0 hr",
+    "status": "Awaiting office",
+    "tone": "w"
+   }
+  ]
+ },
+ "wallet": {
+  "kpis": [
+   [
+    "$84.50",
+    "Reward dollars"
+   ],
+   [
+    "Momentum",
+    "Tier · 41 shifts"
+   ],
+   [
+    "$933",
+    "Wallet balance"
+   ]
+  ],
+  "rows": [
+   {
+    "title": "500th hour milestone",
+    "meta": "Oct",
+    "status": "+$25.00",
+    "tone": ""
+   },
+   {
+    "title": "Referral: Jordan T.",
+    "meta": "First shift complete",
+    "status": "+$25.00",
+    "tone": ""
+   },
+   {
+    "title": "Hours worked · week of Oct 26",
+    "meta": "24.5 hr",
+    "status": "+$24.50",
+    "tone": ""
+   }
+  ]
+ },
+ "apps": [
+  {
+   "title": "Permanent RDH · Lakeside Dental",
+   "meta": "Applied Oct 20",
+   "status": "Interview Nov 4",
+   "tone": "n"
+  },
+  {
+   "title": "Temp-to-hire · North Dallas Ortho",
+   "meta": "Applied Oct 25",
+   "status": "Under review",
+   "tone": "w"
+  },
+  {
+   "title": "Part-time · Uptown Perio",
+   "meta": "Applied Oct 2",
+   "status": "Offer!",
+   "tone": ""
+  }
+ ],
+ "creds": [
+  {
+   "title": "Texas RDH license",
+   "meta": "#DEMO-12345 · expires Aug 2027",
+   "status": "Verified",
+   "tone": ""
+  },
+  {
+   "title": "CPR / BLS",
+   "meta": "Expires Dec 2026",
+   "status": "Renew soon",
+   "tone": "w"
+  },
+  {
+   "title": "Local anesthesia permit",
+   "meta": "Verified Mar 2026",
+   "status": "Verified",
+   "tone": ""
+  },
+  {
+   "title": "Malpractice insurance",
+   "meta": "Upload needed",
+   "status": "Missing",
+   "tone": "n"
+  }
+ ],
+ "recruiter": "Taylor (demo)",
+ "messages": [
+  {
+   "me": false,
+   "text": "Hi Maya! Lakeside loved you. They want you for Nov 9–13 as a trial."
+  },
+  {
+   "me": true,
+   "text": "Yes please!"
+  },
+  {
+   "me": false,
+   "text": "Booked. Confirmation is in your schedule."
+  }
+ ],
+ "tickets": [
+  {
+   "title": "Ticket #DEMO-90 · Missing hours Oct 22",
+   "meta": "Opened Oct 24",
+   "status": "Resolved",
+   "tone": ""
+  }
+ ],
+ "faq": [
+  [
+   "When do I get paid?",
+   "Weekly. Shifts approved by Tuesday pay by Friday."
+  ],
+  [
+   "How do I cancel a shift?",
+   "Open it in My schedule, or text your recruiter. Please give as much notice as you can."
+  ]
+ ]
+}

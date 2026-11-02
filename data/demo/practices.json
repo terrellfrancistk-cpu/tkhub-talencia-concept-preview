@@ -1,0 +1,257 @@
+{
+ "account": {
+  "name": "Lakeside Dental",
+  "meta": "Dallas, TX · Account #DEMO-0042"
+ },
+ "kpis": [
+  [
+   "3",
+   "Open requests"
+  ],
+  [
+   "27",
+   "Shifts filled this month"
+  ],
+  [
+   "98%",
+   "Fill rate"
+  ],
+  [
+   "4.9★",
+   "Avg. worker rating"
+  ]
+ ],
+ "requests": [
+  {
+   "title": "Dental Hygienist · Tue Nov 3",
+   "meta": "8:00a–5:00p · Temp",
+   "status": "Matching",
+   "tone": "w"
+  },
+  {
+   "title": "Dental Assistant · Nov 9–13",
+   "meta": "Temp-to-hire",
+   "status": "2 candidates",
+   "tone": "n"
+  },
+  {
+   "title": "Front Office · Permanent",
+   "meta": "Search started Oct 28",
+   "status": "Interviewing",
+   "tone": "n"
+  }
+ ],
+ "filled": [
+  {
+   "title": "Maya R., RDH · Oct 30",
+   "meta": "Filled in 3 hr",
+   "status": "Filled",
+   "tone": ""
+  },
+  {
+   "title": "Jordan T., DA · Oct 29",
+   "meta": "Filled in 5 hr",
+   "status": "Filled",
+   "tone": ""
+  }
+ ],
+ "calendar": {
+  "month": "November 2026",
+  "days": 30,
+  "booked": [
+   3,
+   4,
+   9,
+   10,
+   11,
+   12,
+   13,
+   17,
+   24
+  ]
+ },
+ "workers": [
+  {
+   "title": "Maya R., RDH",
+   "meta": "Hygienist · 6 shifts with you · Dentrix",
+   "status": "4.9★",
+   "tone": ""
+  },
+  {
+   "title": "Jordan T.",
+   "meta": "Dental Assistant · 4 shifts · Eaglesoft",
+   "status": "4.8★",
+   "tone": ""
+  },
+  {
+   "title": "Priya S.",
+   "meta": "Front office · 2 shifts",
+   "status": "5.0★",
+   "tone": ""
+  },
+  {
+   "title": "Dr. Alex K., DDS",
+   "meta": "Associate dentist · 1 shift",
+   "status": "4.9★",
+   "tone": ""
+  }
+ ],
+ "timesheets": [
+  {
+   "id": "demo-ts-1",
+   "who": "Maya R. · Oct 30",
+   "detail": "8:02a–5:04p · 8.5 hr (30 min lunch)"
+  },
+  {
+   "id": "demo-ts-2",
+   "who": "Jordan T. · Oct 29",
+   "detail": "7:58a–4:31p · 8.0 hr"
+  }
+ ],
+ "invoices": {
+  "list": [
+   {
+    "title": "INV-DEMO-1031 · Oct 26–Nov 1",
+    "meta": "Due Nov 15",
+    "status": "Open",
+    "tone": "w"
+   },
+   {
+    "title": "INV-DEMO-1024 · Oct 19–25",
+    "meta": "Paid Oct 30 by ACH",
+    "status": "Paid",
+    "tone": ""
+   }
+  ],
+  "breakdown": {
+   "id": "INV-DEMO-1031",
+   "lines": [
+    [
+     "Hygienist hours (16.5 × $58.00)",
+     "$957.00"
+    ],
+    [
+     "Assistant hours (8.0 × $34.00)",
+     "$272.00"
+    ],
+    [
+     "Subtotal",
+     "$1,229.00"
+    ],
+    [
+     "Card processing (2.9% + $0.30), waived with ACH",
+     "$35.94"
+    ]
+   ],
+   "totals": [
+    [
+     "Total by card",
+     "$1,264.94"
+    ],
+    [
+     "Total by ACH bank transfer",
+     "$1,229.00"
+    ]
+   ]
+  }
+ },
+ "rewards": {
+  "kpis": [
+   [
+    "2,340",
+    "Office points"
+   ],
+   [
+    "Summit",
+    "Tier"
+   ],
+   [
+    "$150",
+    "Credit available"
+   ],
+   [
+    "660",
+    "Points to Vanguard"
+   ]
+  ],
+  "items": [
+   {
+    "title": "Team lunch credit",
+    "meta": "",
+    "status": "1,000 pts",
+    "tone": ""
+   },
+   {
+    "title": "$150 invoice credit",
+    "meta": "",
+    "status": "1,500 pts",
+    "tone": ""
+   },
+   {
+    "title": "Priority fill weekend",
+    "meta": "",
+    "status": "2,000 pts",
+    "tone": ""
+   }
+  ]
+ },
+ "team": [
+  {
+   "title": "Dr. Sam Lee",
+   "meta": "Owner · sam@lakeside.demo",
+   "status": "Admin",
+   "tone": "n"
+  },
+  {
+   "title": "Ana Ortiz",
+   "meta": "Office manager · ana@lakeside.demo",
+   "status": "Approver",
+   "tone": ""
+  },
+  {
+   "title": "Chris P.",
+   "meta": "Front desk · chris@lakeside.demo",
+   "status": "Viewer",
+   "tone": "w"
+  }
+ ],
+ "recruiter": "Taylor (demo)",
+ "messages": [
+  {
+   "me": false,
+   "text": "Hi! Maya is confirmed for Tuesday 8a. She knows Dentrix."
+  },
+  {
+   "me": true,
+   "text": "Perfect, thank you!"
+  },
+  {
+   "me": false,
+   "text": "I have 2 assistant candidates for the 9th. Want to see profiles?"
+  }
+ ],
+ "tickets": [
+  {
+   "title": "Ticket #DEMO-77 · Invoice question",
+   "meta": "Opened Oct 28",
+   "status": "Resolved",
+   "tone": ""
+  },
+  {
+   "title": "Ticket #DEMO-81 · Add a second location",
+   "meta": "Opened Oct 31",
+   "status": "Open",
+   "tone": "w"
+  }
+ ],
+ "faq": [
+  [
+   "How do I cancel a shift?",
+   "In the live portal, open the request and choose Cancel. Shifts cancelled within 24 hours may carry a fee."
+  ],
+  [
+   "When are invoices sent?",
+   "Weekly, every Monday."
+  ]
+ ]
+}

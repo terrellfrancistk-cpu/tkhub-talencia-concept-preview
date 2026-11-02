@@ -350,3 +350,5 @@ section{padding:64px 20px}.c{padding:64px 20px}
  .tl-y{font-size:34px;text-align:left;margin-bottom:6px}.tl-b h3{font-size:20px}.tl-b p{font-size:16px}
  .tl-i.now .tl-b{margin-top:4px;padding:22px}
 }
+/* v12: section labels ("Texas roots. National reach.") were 14px and easy to miss; scale up with the viewport */
+.eyebrow{font-size:clamp(16px,1.35vw,19px);font-weight:650;letter-spacing:.005em;margin-bottom:12px}
