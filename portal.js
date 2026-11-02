@@ -36,7 +36,16 @@ function bind(A){$$('form[data-cpf]',A).forEach(f=>f.onsubmit=e=>{e.preventDefau
  const lv=$('#live',A);if(lv){let v=287.12;clearInterval(window._lv);window._lv=setInterval(()=>{if(!document.contains(lv))return clearInterval(window._lv);v+=.02;lv.textContent='$'+v.toFixed(2)},1000);lv.textContent='$'+v.toFixed(2)}}
 const go=k=>{sessionStorage['pt-'+k]=1;setTab(k);scrollTo(0,0)};
 $$('[data-seg]').forEach(b=>{b.onclick=()=>setTab(b.dataset.seg,1);b.onkeydown=e=>{if(/Arrow(Left|Right)/.test(e.key)){const k=cur==='practices'?'professionals':'practices';setTab(k,1);$('#tb-'+k).focus()}}});
-$$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$$('[data-magic]').forEach(b=>b.onclick=()=>$('#mg-'+b.dataset.magic).classList.add('show'));
+$$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$$('[data-magic]').forEach(b=>b.onclick=()=>{const k=b.dataset.magic,e=$('#e-'+k).value;$('#mg-'+k+' .mg-to').textContent=e||'your inbox';$('#mg-'+k).classList.add('show')});
+const SH=$('#sso-sheet');let ssoK;
+$$('[data-sso]').forEach(b=>b.onclick=()=>{ssoK=b.dataset.sso;const nm=b.textContent.replace('Continue with','').trim();$('#sso-t').textContent='Signing in with '+nm;$('.sheet-g',SH).innerHTML=b.querySelector('svg').outerHTML;
+ const e=$('#e-'+ssoK).value;$('.sa-n',SH).textContent=ssoK==='practices'?'Lakeside Dental (demo)':'Maya R. (demo)';$('.sheet-acct small',SH).textContent=e||(ssoK==='practices'?'office@lakeside.demo':'maya@demo.talencia');
+ $('.sheet',SH).classList.remove('busy');SH.hidden=false;$('[data-sso-ok]',SH).focus()});
+$('[data-sso-x]',SH).onclick=()=>{SH.hidden=true};SH.onclick=e=>{if(e.target===SH)SH.hidden=true};addEventListener('keydown',e=>{if(e.key==='Escape')SH.hidden=true});
+$('[data-sso-ok]',SH).onclick=()=>{$('.sheet',SH).classList.add('busy');setTimeout(()=>{SH.hidden=true;go(ssoK)},950)};
+const ML={text:'Enter the 6-digit code we texted you',email:'Enter the 6-digit code we emailed you',app:'Enter the code from your authenticator app'};
+$$('.mfa-ch [data-mf]').forEach(b=>b.onclick=()=>{const g=b.parentNode;$$('[data-mf]',g).forEach(x=>x.setAttribute('aria-checked',x===b));g.parentNode.querySelector('.mf-l').textContent=ML[b.dataset.mf];g.parentNode.querySelector('input').focus()});
+
 
 const TX={practices:{signin:['Client portal','For dental practices & medical facilities. Request talent, approve time, pay invoices.','Sign in'],join:['Create a practice account','Set up your practice in a minute. Request talent the same day.','Create account']},professionals:{signin:['Talent portal','For hygienists, assistants, dentists & clinicians. Claim shifts, track pay, manage credentials.','Sign in'],join:['Join Talencia','Create your free profile. Claim shifts, get paid weekly, earn rewards.','Create account']}};
 let mode='signin';
@@ -47,7 +56,7 @@ function setMode(m,push,anim){mode=m;['practices','professionals'].forEach(k=>{c
  if(push){const u=new URL(location);m==='join'?u.searchParams.set('mode','join'):u.searchParams.delete('mode');history.replaceState(null,'',u.pathname+u.search+location.hash)}}
 ['practices','professionals'].forEach(k=>{const C=$('#lg-'+k);['h1','h1+p'].forEach(s=>$(s,C).setAttribute('data-swapt',''));$('.cp-pw [type=submit]',C).setAttribute('data-swapt','')});
 $$('[data-mode]').forEach(b=>b.onclick=()=>{if(b.dataset.mode!==mode)setMode(b.dataset.mode,1,1)});
-$$('.cp-pw').forEach(f=>f.onsubmit=e=>{e.preventDefault();if(mode==='join')return go(f.dataset.k);const m=$('.mfa',f);if(m.hidden){m.hidden=false;$('input',m).focus();f.querySelector('[type=submit]').textContent='Verify code'}else go(f.dataset.k)});
+$$('.cp-pw').forEach(f=>f.onsubmit=e=>{e.preventDefault();if(mode==='join')return go(f.dataset.k);const m=$('.mfa',f);if(m.hidden){m.hidden=false;$('.mfa-ch button',m).focus();f.querySelector('[type=submit]').textContent='Verify code'}else go(f.dataset.k)});
 $$('[data-out]').forEach(b=>b.onclick=()=>{sessionStorage.removeItem('pt-'+b.dataset.out);setTab(b.dataset.out)});
 $$('[data-swap]').forEach(b=>b.onclick=()=>setTab(cur==='practices'?'professionals':'practices',1));
 const Q=new URLSearchParams(location.search),q=Q.get('tab'),h=location.hash.slice(1);let k=/^pro/.test(q||h)?'professionals':/^prac|^client/.test(q||h)?'practices':(sessionStorage.ptLast||'practices');

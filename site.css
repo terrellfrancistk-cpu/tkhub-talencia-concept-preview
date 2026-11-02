@@ -128,5 +128,25 @@ body.ms-lock{overflow:hidden;touch-action:none}
 .cp-card [data-swapt]{transition:opacity .18s}
 .cp-card.fade [data-swapt]{opacity:0}
 .cp-card .jo,.cp-card.join .si{display:none}.cp-card.join .jo{display:inline}
-.cp-card.join .mfa,.cp-card.join [data-magic],.cp-card.join .ok-msg[id^=mg]{display:none!important}
+.cp-card.join .mfa{display:none!important}
 @media (prefers-reduced-motion:reduce){.jx,.mode-ind,.cp-card [data-swapt]{transition:none}}
+
+/* v8.5 all login types */
+.sso-g{display:grid;gap:10px;margin-top:16px}.sso-g .sso{margin:0}
+.mfa-ch{display:grid;gap:8px;margin:6px 0 12px}
+.mfa-ch button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font:inherit;color:#1F1B4D;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.mfa-ch button small{color:var(--mute)}
+.mfa-ch button[aria-checked=true]{border-color:#5BC8D6;box-shadow:0 0 0 3px rgba(91,200,214,.18)}
+.ok-msg.mg{background:#f3fbfc;border-radius:14px;padding:14px;text-align:center}
+.sheet-bd{position:fixed;inset:0;z-index:200;background:rgba(31,27,77,.32);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;animation:sbf .25s}
+.sheet-bd[hidden]{display:none}
+.sheet{width:100%;max-width:440px;background:#fff;border-radius:28px 28px 0 0;padding:26px 24px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -10px 40px rgba(31,27,77,.18);animation:sbu .35s cubic-bezier(.3,.7,.2,1)}
+@media(min-width:700px){.sheet-bd{align-items:center}.sheet{border-radius:28px}}
+.sheet-g{display:flex;justify-content:center;margin-bottom:8px}.sheet-g svg{width:34px;height:34px}
+.sheet h2{text-align:center;font-size:22px;margin:4px 0;color:#1F1B4D}.sheet-s{text-align:center;color:var(--mute);font-size:14px}
+.sheet-acct{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:12px;margin:14px 0}
+.av{width:38px;height:38px;border-radius:50%;background:#1F1B4D;color:#fff;display:grid;place-items:center;font-weight:700}
+.sheet-bar{height:3px;background:var(--soft);border-radius:3px;overflow:hidden;margin:0 0 14px;visibility:hidden}.sheet-bar i{display:block;height:100%;width:0;background:#5BC8D6}
+.sheet.busy .sheet-bar{visibility:visible}.sheet.busy .sheet-bar i{width:100%;transition:width .9s}
+@keyframes sbf{from{opacity:0}}@keyframes sbu{from{transform:translateY(40px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.sheet-bd,.sheet{animation:none}}
