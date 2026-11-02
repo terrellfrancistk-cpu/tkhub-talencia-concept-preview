@@ -1,6 +1,14 @@
 (()=>{const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const mb=$('.menu-btn'),nv=$('#mainnav');if(mb)mb.onclick=()=>{const o=mb.getAttribute('aria-expanded')!=='true';mb.setAttribute('aria-expanded',o);nv.classList.toggle('open',o)};
+const mb=$('.menu-btn'),ms=$('#msheet'),mbd=$('.ms-bd');
+const msOpen=()=>{ms.hidden=mbd.hidden=false;document.body.classList.add('ms-lock');mb.setAttribute('aria-expanded','true');requestAnimationFrame(()=>ms.classList.add('open'));$('.ms-x').focus()};
+const msClose=(f=true)=>{if(ms.hidden)return;ms.classList.remove('open');document.body.classList.remove('ms-lock');mb.setAttribute('aria-expanded','false');mbd.hidden=true;setTimeout(()=>ms.hidden=true,rm?0:280);if(f)mb.focus()};
+if(mb&&ms){mb.onclick=msOpen;$('.ms-x').onclick=()=>msClose();mbd.onclick=()=>msClose();
+$$('.ms-g>.ms-h').forEach(b=>b.onclick=()=>{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);$('#'+b.getAttribute('aria-controls')).hidden=!o});
+$$('a',ms).forEach(a=>a.addEventListener('click',()=>msClose(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')msClose()});
+ms.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const f=$$('a,button',ms).filter(x=>x.offsetParent),a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}});
+matchMedia('(min-width:901px)').addEventListener('change',e=>e.matches&&msClose(false))}
 $$('.dd>button').forEach(b=>b.onclick=()=>{const o=b.getAttribute('aria-expanded')!=='true';$$('.dd>button').forEach(x=>{x.setAttribute('aria-expanded','false');x.parentNode.classList.remove('open')});b.setAttribute('aria-expanded',o);b.parentNode.classList.toggle('open',o)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.dd.open').forEach(d=>{d.classList.remove('open');$('button',d).setAttribute('aria-expanded','false')})});
 // reveal
