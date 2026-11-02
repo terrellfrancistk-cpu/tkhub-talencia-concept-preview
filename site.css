@@ -307,4 +307,24 @@ section{padding:64px 20px}.c{padding:64px 20px}
 @media(max-width:600px){.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:32px -20px 0;padding:4px 20px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.svc-grid::-webkit-scrollbar{display:none}.svc-grid .svc{flex:0 0 74%;scroll-snap-align:start;min-height:190px}.svc-grid:after{content:"";flex:0 0 8px}}
 @media(max-width:600px){#services .lead:after{content:" Swipe →";color:#1C8FA0;font-weight:600}}
 /* design3 r2: why = 3 crisp pillars + proof chips */
-@media(max-width:900px){.why{gap:18px}.why>div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start}.why>div .ico{grid-row:span 2;margin:0}}
+@media(max-width:900px){.why{gap:18px}.why>div{display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:start}.why>div .ico{grid-row:span 2;margin:0}}
+/* v10.3: map card (shared by home, coverage, jobs) — legend gets inner padding (no clipping on mobile), map + legend centered in the card; "Same day" stays on one line */
+.map-box{display:flex;flex-direction:column;justify-content:center}
+.map-legend{padding:4px 22px 20px;gap:10px 18px}
+.panel .num{grid-template-columns:auto auto;justify-content:start;column-gap:24px}
+.panel .num b,.panel .num span{white-space:nowrap}
+@media(max-width:600px){.map-legend{padding:4px 16px 16px}}
+/* v10.3: 4-up feature tiles on grey sections become compact white cards (they were invisible on the grey) */
+.soft .tiles.t4{gap:16px;margin-top:36px}
+.soft .tiles.t4 .tile{background:#fff;padding:22px 20px;text-align:left;box-shadow:inset 0 0 0 1px #e3eef0}
+.soft .tiles.t4 .tile h3{font-size:17px!important;line-height:1.25;margin:0 0 4px;color:var(--navy)}
+.soft .tiles.t4 .tile p{margin:0;font-size:15px;line-height:1.45}
+.soft .tiles.t4 .tile:has(>.ico){display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:start}
+.soft .tiles.t4 .tile>.ico{grid-row:span 2;width:40px;height:40px;margin:0;border-radius:12px}
+.soft .tiles.t4 .tile>.ico svg{width:22px;height:22px}
+@media(max-width:1000px) and (min-width:601px){.soft .tiles.t4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.soft .tiles.t4{gap:10px;margin-top:28px}.soft .tiles.t4 .tile{padding:18px}}
+/* v10.3: role filter shading on the map */
+#usmap .st{transition:fill .45s ease}
+.map-legend i.ramp{width:44px;border-radius:7px;background:linear-gradient(90deg,#bfe9ee,#5BC8D6,#1C7C88,#1F1B4D)}
+.panel li.on{margin:0 -10px;padding:8px 10px;border-radius:10px;background:#fff;border-bottom-color:transparent;font-weight:600}.panel li.on b{color:var(--navy)}
