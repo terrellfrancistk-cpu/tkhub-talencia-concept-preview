@@ -43,3 +43,16 @@
 .stats-band .stat b{background:linear-gradient(180deg,#fff,#bfe9ee);-webkit-background-clip:text;background-clip:text;color:transparent}
 .testi-sec{background:linear-gradient(180deg,#fff,#eefafb)}
 .testi-sec .testi figure:nth-child(2){background:var(--navy);color:#fff}.testi-sec .testi figure:nth-child(2) blockquote{color:#fff}.testi-sec .testi figure:nth-child(2) figcaption b{color:#fff}.testi-sec .testi figure:nth-child(2) figcaption span{color:#c9c7e0}
+/* round 1: hero fork — the two audiences choose their path in the first fold */
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:880px;margin:8px auto 26px;text-align:left}
+.fork-c{position:relative;display:flex;flex-direction:column;gap:6px;padding:28px 30px 30px;border-radius:28px;text-decoration:none;min-height:190px;justify-content:flex-end;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.fork-c.hire{background:radial-gradient(120% 120% at 100% 0%,#3a3390 0,var(--navy) 60%);color:#fff}
+.fork-c.work{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px #d9e9ec}
+.fork-c .fk-k{font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal)}.fork-c.work .fk-k{color:#14606a}
+.fork-c b{font-size:clamp(24px,2.6vw,32px);line-height:1.1;letter-spacing:-.02em}
+.fork-c .fk-s{font-size:16px;color:#d6d4ea}.fork-c.work .fk-s{color:#4a4a50}
+.fork-c .fk-go{position:absolute;top:24px;right:26px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--teal);color:var(--navy);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.fork-c.work .fk-go{background:var(--navy);color:#fff}
+.fork-c:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(31,27,77,.5)}.fork-c.work:hover{box-shadow:inset 0 0 0 1.5px var(--teal),0 30px 60px -30px rgba(31,27,77,.35)}
+.fork-c:hover .fk-go{transform:translateX(4px) rotate(-45deg)}
+@media(max-width:700px){.fork{grid-template-columns:1fr;gap:12px}.fork-c{min-height:0;padding:22px 22px 24px}.fork-c .fk-go{top:18px;right:18px;width:40px;height:40px}}
