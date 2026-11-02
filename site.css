@@ -60,7 +60,7 @@ dialog{border:0;border-radius:24px;padding:0;max-width:420px;width:calc(100% - 3
 .mapx{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:40px;text-align:left}
 .map-box{position:relative;background:#fff;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;touch-action:pan-y}
 #usmap{display:block;width:100%;height:auto;transition:none}#usmap .st{stroke:#fff;stroke-width:1;cursor:pointer;transition:fill .35s}#usmap .st:hover,#usmap .st:focus{stroke:var(--navy);stroke-width:2;outline:none}#usmap .st.sel{stroke:var(--navy);stroke-width:2.5}
-.pin{cursor:pointer}.pin circle.p{fill:var(--teal);stroke:#fff;stroke-width:1.5}.pin text{font:600 11px var(--f);fill:var(--navy);paint-order:stroke;stroke:#fff;stroke-width:3}
+.pin{cursor:pointer}.pin circle.p{fill:#fff;stroke:var(--navy);stroke-width:2.2;vector-effect:non-scaling-stroke}.pin text{font:600 11px var(--f);fill:var(--navy);paint-order:stroke;stroke:#fff;stroke-width:3}
 .roles{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;justify-content:center}.roles button{font:600 14px var(--f);padding:10px 16px;border-radius:999px;border:1px solid #d2d2d7;background:#fff;cursor:pointer;min-height:44px;color:var(--ink)}.roles button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
 .heat{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mute);padding:12px 16px;border-top:1px solid var(--line)}.heat i{flex:1;height:8px;border-radius:9px;background:linear-gradient(90deg,#eef3f6,#bfe9ee,#5BC8D6,#1C7C88,#1F1B4D)}
 .panel{background:var(--soft);border-radius:var(--r);padding:26px}.panel .num{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.panel .num b{display:block;font-size:30px;letter-spacing:-.02em}.panel .num span{font-size:12px;color:var(--mute)}
@@ -273,3 +273,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .demo-under .demo-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin:0}
 .demo-under .more{font-size:15px;color:#14606a}
 .demo-under .fine{margin:8px 0 0;font-size:13px;color:#56565c}
+
+.hq path.pinp{fill:var(--teal);stroke:#fff;stroke-width:1.5;vector-effect:non-scaling-stroke}.hq circle.pc{fill:#fff}
+.map-legend i.city{background:#fff!important;border:2px solid #1F1B4D;border-radius:50%}
+.map-legend i.hqpin{background:#5BC8D6!important;border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
