@@ -268,3 +268,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .legal .tkh:hover{color:var(--ink)}
 @media(max-width:700px){.legal .tkh{margin-left:0;flex-basis:100%}}
 :root{--teal-d:#16707b}.eyebrow{color:#16707b}.explore{color:#14606a}.dark .eyebrow,.stats-band .eyebrow{color:var(--teal)}
+/* v9.5: demo controls + note sit centered under the phone */
+.demo-under{margin:18px auto 0;text-align:center;max-width:360px}
+.demo-under .demo-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin:0}
+.demo-under .more{font-size:15px;color:#14606a}
+.demo-under .fine{margin:8px 0 0;font-size:13px;color:#56565c}
