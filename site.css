@@ -267,3 +267,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .legal .tkh img{width:22px;height:22px;display:block}
 .legal .tkh:hover{color:var(--ink)}
 @media(max-width:700px){.legal .tkh{margin-left:0;flex-basis:100%}}
+:root{--teal-d:#16707b}.eyebrow{color:#16707b}.explore{color:#14606a}.dark .eyebrow,.stats-band .eyebrow{color:var(--teal)}

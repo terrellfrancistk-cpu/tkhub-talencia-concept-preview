@@ -11,7 +11,7 @@ fit();addEventListener('resize',fit);
 const startDemo=ph=>{const f=$('iframe',ph);if(!f||f.dataset.on)return f;f.dataset.on=1;f.src=f.dataset.src;ph.classList.add('on');const p=$('.iph-poster',ph);f.addEventListener('load',()=>{p&&p.classList.add('gone');setTimeout(()=>p&&p.remove(),450)},{once:true});return f};
 $$('.iph').forEach(ph=>{const p=$('.iph-poster',ph);if(!p)return;p.addEventListener('click',()=>startDemo(ph));
  if(matchMedia('(hover:hover) and (pointer:fine)').matches)ph.addEventListener('pointerenter',()=>startDemo(ph),{once:true})});
-$$('[data-reload-demo]').forEach(b=>b.addEventListener('click',()=>{const ph=b.closest('section')?.querySelector('.iph');if(!ph)return;const f=$('iframe',ph);if(!f.dataset.on){startDemo(ph);return}f.src=f.dataset.src+'?r='+Date.now()}));
+$$('[data-reload-demo]').forEach(b=>b.addEventListener('click',()=>{const ph=b.closest('section')?.querySelector('.iph');if(!ph)return;const f=$('iframe',ph);if(!f.dataset.on){startDemo(ph);return}f.src=f.dataset.src+'&r='+Date.now()}));
 
 /* --- FAQ accordion with smooth height animation --- */
 $$('.faq details').forEach(d=>{const s=$('summary',d),a=$('.ans',d);s.addEventListener('click',e=>{e.preventDefault();if(RM){d.open=!d.open;return}
