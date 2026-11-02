@@ -306,3 +306,5 @@ section{padding:64px 20px}.c{padding:64px 20px}
 /* design3 r1: mobile services as a swipe rail */
 @media(max-width:600px){.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:32px -20px 0;padding:4px 20px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.svc-grid::-webkit-scrollbar{display:none}.svc-grid .svc{flex:0 0 74%;scroll-snap-align:start;min-height:190px}.svc-grid:after{content:"";flex:0 0 8px}}
 @media(max-width:600px){#services .lead:after{content:" Swipe →";color:#1C8FA0;font-weight:600}}
+/* design3 r2: why = 3 crisp pillars + proof chips */
+@media(max-width:900px){.why{gap:18px}.why>div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start}.why>div .ico{grid-row:span 2;margin:0}}
