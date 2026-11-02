@@ -303,3 +303,6 @@ section{padding:64px 20px}.c{padding:64px 20px}
 .mapx{margin-top:24px}
 @media(max-width:900px){section,.c{padding:44px 18px}.mapx{margin-top:20px;gap:16px}.map-box{margin:0 2px}}
 @media(max-width:900px){.map-box.zm{scale:1!important;transform:none!important}.map-box svg{overflow:visible}}
+/* design3 r1: mobile services as a swipe rail */
+@media(max-width:600px){.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:32px -20px 0;padding:4px 20px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.svc-grid::-webkit-scrollbar{display:none}.svc-grid .svc{flex:0 0 74%;scroll-snap-align:start;min-height:190px}.svc-grid:after{content:"";flex:0 0 8px}}
+@media(max-width:600px){#services .lead:after{content:" Swipe →";color:#1C8FA0;font-weight:600}}
