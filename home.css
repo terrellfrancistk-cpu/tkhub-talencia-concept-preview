@@ -69,3 +69,10 @@
 .qs-go{width:100%;margin-top:6px;font-size:18px}
 .qs-alt{margin-top:22px;color:#4a4a50}
 @media(max-width:600px){.qs-ch span{padding:0 18px;font-size:16px}}
+/* v9.6 */
+.hx{padding:clamp(80px,10vw,120px) 20px clamp(20px,3vw,40px)}
+.demo-sec{padding:clamp(40px,5vw,72px) 20px clamp(44px,5vw,80px)}
+.demo-sec .big-h{margin-bottom:8px}
+.feat{margin:12px 0 0}.feat li{padding:8px 0}
+.try-here{margin:0 0 12px;text-align:center;font-weight:600;color:var(--teal-d);font-size:15px}
+@media(max-width:900px){.demo-sec{padding:40px 18px 44px}.demo-more{margin-bottom:18px}}

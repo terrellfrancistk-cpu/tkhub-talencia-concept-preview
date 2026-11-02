@@ -298,3 +298,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .fact b{display:block;font-size:22px;color:#fff;line-height:1.2}.fact span{display:block;margin-top:6px;font-size:15px;color:#d2d2d7}
 .facts-src{margin-top:14px;font-size:13px;color:#c7c7cc}
 @media(max-width:520px){.facts{gap:10px}.fact{padding:14px}.fact b{font-size:17px}.fact span{font-size:13px}}
+/* v9.6 tighter rhythm (~45% less on mobile) */
+section{padding:64px 20px}.c{padding:64px 20px}
+.mapx{margin-top:24px}
+@media(max-width:900px){section,.c{padding:44px 18px}.mapx{margin-top:20px;gap:16px}.map-box{margin:0 2px}}
+@media(max-width:900px){.map-box.zm{scale:1!important;transform:none!important}.map-box svg{overflow:visible}}
