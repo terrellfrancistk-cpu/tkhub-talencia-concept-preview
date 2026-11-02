@@ -10,9 +10,20 @@
     <meta property="og:description" content="People First. Technology Forward. Concept preview by TK Hub." />
     <meta property="og:type" content="website" />
 
+    <script>
+      // GitHub Pages SPA deep-link restore (pairs with the site's 404.html)
+      (function (l) {
+        var q = l.search.match(/[?&]__p=([^&]*)/);
+        if (q) {
+          var path = decodeURIComponent(q[1]);
+          var rest = l.search.replace(/[?&]__p=[^&]*/, "").replace(/^&/, "?");
+          history.replaceState(null, "", l.pathname.replace(/\/$/, "") + path + rest + l.hash);
+        }
+      })(window.location);
+    </script>
     <link rel="icon" type="image/png" href="/tkhub-talencia-concept-preview/app/favicon.png" />
     <link rel="apple-touch-icon" href="/tkhub-talencia-concept-preview/app/icon.png" />
-    <script type="module" crossorigin src="/tkhub-talencia-concept-preview/app/assets/index-E24x-Uw1.js"></script>
+    <script type="module" crossorigin src="/tkhub-talencia-concept-preview/app/assets/index-CLk43lH5.js"></script>
     <link rel="stylesheet" crossorigin href="/tkhub-talencia-concept-preview/app/assets/index-C-hihiWN.css">
   </head>
 
