@@ -16,6 +16,8 @@ if(!rm&&'IntersectionObserver'in window){$$('.rv').forEach(e=>{if(e.getBoundingC
 // auth
 const au=$('#auth');$$('[data-signin]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();location.href=new URL('portal/?tab='+(/apply/i.test(b.textContent)?'professionals':(sessionStorage.ptLast||'practices')),document.baseURI)}));if(au){$$('[data-close]',au).forEach(b=>b.onclick=()=>au.close());$$('.sso',au).forEach(b=>b.onclick=()=>{$('#au-msg').textContent='Demo only: '+b.dataset.p+' sign-in is not connected in this concept.'})}
 if(location.hash==='#signin'&&au)au.showModal();
+// v9.4 round 2: prefill request form from the home quick start
+{const q=new URLSearchParams(location.search);['field','when'].forEach(k=>{const v=q.get(k);if(v)$$(`input[name=${k}]`).forEach(i=>{if(i.value===v)i.checked=true})})}
 // demo forms
 $$('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const m=$('.ok-msg',f);m.classList.add('show');m.focus()}));
 // calculator
