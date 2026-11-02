@@ -1,4 +1,4 @@
-/* v9.3 motion: smooth wheel scrolling, staggered reveals in/out, count-ups, parallax, subtle scroll zoom, map entrance, FAQ accordion, phone fit (never scroll-scaled). Vanilla, rAF-batched, reduced-motion aware. */
+/* v9.4 motion: smooth wheel scrolling, staggered reveals in/out, count-ups, parallax, subtle scroll zoom, map entrance, FAQ accordion, phone fit (never scroll-scaled). Vanilla, rAF-batched, reduced-motion aware. */
 (()=>{const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -7,7 +7,11 @@ const phones=$$('.iph');let lastW=0;const H0=Math.max(innerHeight,560);
 const fit=()=>{const vw=document.documentElement.clientWidth;if(vw===lastW)return;lastW=vw;
  phones.forEach(ph=>{const maxW=vw<=900?vw-56:440;let s=Math.min(1,maxW/430,vw>900?(H0-140)/876:9);s=Math.max(.5,s);ph.style.setProperty('--s',s.toFixed(4))})};
 fit();addEventListener('resize',fit);
-$$('[data-reload-demo]').forEach(b=>b.addEventListener('click',()=>{const f=b.closest('section')?.querySelector('iframe')||$('#demo-frame');if(f)f.src=f.src.split('?')[0]+'?r='+Date.now()}));
+/* --- v9.4 phone demo: poster until the user hovers (desktop) or taps; once started it never reloads on scroll --- */
+const startDemo=ph=>{const f=$('iframe',ph);if(!f||f.dataset.on)return f;f.dataset.on=1;f.src=f.dataset.src;ph.classList.add('on');const p=$('.iph-poster',ph);f.addEventListener('load',()=>{p&&p.classList.add('gone');setTimeout(()=>p&&p.remove(),450)},{once:true});return f};
+$$('.iph').forEach(ph=>{const p=$('.iph-poster',ph);if(!p)return;p.addEventListener('click',()=>startDemo(ph));
+ if(matchMedia('(hover:hover) and (pointer:fine)').matches)ph.addEventListener('pointerenter',()=>startDemo(ph),{once:true})});
+$$('[data-reload-demo]').forEach(b=>b.addEventListener('click',()=>{const ph=b.closest('section')?.querySelector('.iph');if(!ph)return;const f=$('iframe',ph);if(!f.dataset.on){startDemo(ph);return}f.src=f.dataset.src+'?r='+Date.now()}));
 
 /* --- FAQ accordion with smooth height animation --- */
 $$('.faq details').forEach(d=>{const s=$('summary',d),a=$('.ans',d);s.addEventListener('click',e=>{e.preventDefault();if(RM){d.open=!d.open;return}

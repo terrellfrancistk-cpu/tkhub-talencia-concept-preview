@@ -37,3 +37,9 @@
 @media(max-width:900px){.demo-grid{grid-template-columns:1fr;text-align:center}.demo-copy,.demo-more,.iph-wrap{grid-column:1;grid-row:auto}.iph-wrap{margin:10px 0 44px}.lead-l,.feat{margin-left:auto;margin-right:auto}.feat{text-align:left}.demo-links{justify-content:center}
  .stats{grid-template-columns:repeat(2,1fr);gap:34px 20px}.stats .stat:last-child{grid-column:1/-1}.aud{grid-template-columns:1fr}.aud .tile{min-height:340px;padding:32px}}
 @media(max-width:600px){section.c{padding:80px 20px}.hx-cta .btn{flex:1 1 0;min-width:140px}}
+/* v9.4 varied chapters */
+.stats-band{background:radial-gradient(120% 140% at 0% 0%,#2a2566 0,var(--navy) 55%,#141036 100%)}
+.stats-band .big-h{color:#fff}.stats-band .stat b{color:#fff}.stats-band .stat span{color:#c9c7e0;font-size:15px}
+.stats-band .stat b{background:linear-gradient(180deg,#fff,#bfe9ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.testi-sec{background:linear-gradient(180deg,#fff,#eefafb)}
+.testi-sec .testi figure:nth-child(2){background:var(--navy);color:#fff}.testi-sec .testi figure:nth-child(2) blockquote{color:#fff}.testi-sec .testi figure:nth-child(2) figcaption b{color:#fff}.testi-sec .testi figure:nth-child(2) figcaption span{color:#c9c7e0}
