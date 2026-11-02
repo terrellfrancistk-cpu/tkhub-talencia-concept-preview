@@ -13,7 +13,7 @@
 @keyframes tc-in{from{opacity:0;transform:translateY(12px) scale(.98)}}
 .tc-head{padding:18px 18px 16px;background:radial-gradient(120% 140% at 0% 0%,#2a2566 0,var(--navy,#1F1B4D) 60%,#141036 100%);color:#fff}
 .tc-top{display:flex;align-items:center;gap:12px}
-.tc-av{position:relative;width:42px;height:42px;border-radius:13px;background:#fff;display:grid;place-items:center;flex:none;font:800 22px/1 var(--f,system-ui);color:var(--navy,#1F1B4D)}
+.tc-av{position:relative;width:42px;height:42px;border-radius:9px;flex:none;font-size:0;color:transparent;background:url("assets/talencia-logo-v2.png") 0 0/198.8px auto no-repeat;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
 .tc-av:after{content:"";position:absolute;right:-3px;bottom:-3px;width:12px;height:12px;border-radius:50%;background:#3ED598;box-shadow:0 0 0 3px #231e56}.tc-av.off:after{background:#c9c7e0}
 .tc-ttl{flex:1;min-width:0}.tc-ttl b{display:block;font-size:17px;letter-spacing:-.01em}.tc-ttl span{font-size:13px;color:#c9c7e0}
 .tc-close{width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:18px;line-height:1}

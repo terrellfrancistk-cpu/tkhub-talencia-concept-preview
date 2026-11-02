@@ -2,7 +2,7 @@
    help center with article links, short guided requests, and a person always one tap away. Conversation persists for the session. */
 (()=>{if(window.__tc)return;window.__tc=1;
 const d=document,$=(s,r=d)=>r.querySelector(s),RM=matchMedia('(prefers-reduced-motion: reduce)').matches,KEY='tc-v1';
-const css=d.createElement('link');css.rel='stylesheet';css.href='chat.css?v=11';d.head.append(css);
+const css=d.createElement('link');css.rel='stylesheet';css.href='chat.css?v=11.1';d.head.append(css);
 if(!window.TC_HELP){const hs=d.createElement('script');hs.src='help-data.js?v=11';d.head.append(hs)}
 const PHONE='214.522.2008',TEL='tel:+12145222008',SMS='sms:+12145222008',MAIL='mailto:recruiting@gotalencia.com';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -27,7 +27,7 @@ const IC={chat:'<svg class="tc-c" viewBox="0 0 24 24" fill="none" stroke="curren
 const hr=hours();
 const btn=d.createElement('button');btn.type='button';btn.className='tc-launch';btn.setAttribute('aria-controls','tc-panel');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Chat with Talencia');btn.innerHTML=IC.chat+IC.x+`<i class="${hr.on?'':'off'}" aria-hidden="true"></i>`;
 const P=d.createElement('div');P.id='tc-panel';P.className='tc-panel';P.hidden=true;P.setAttribute('role','dialog');P.setAttribute('aria-label','Chat with Talencia');
-P.innerHTML=`<div class="tc-head"><div class="tc-top"><span class="tc-av${hr.on?'':' off'}" aria-hidden="true">t</span><div class="tc-ttl"><b>Talencia Assistant <em class="tc-ai">AI demo</em></b><span>${hr.txt}</span></div><button type="button" class="tc-close" aria-label="Close chat">×</button></div>
+P.innerHTML=`<div class="tc-head"><div class="tc-top"><span class="tc-av${hr.on?'':' off'}" role="img" aria-label="Talencia"></span><div class="tc-ttl"><b>Talencia Assistant <em class="tc-ai">AI demo</em></b><span>${hr.txt}</span></div><button type="button" class="tc-close" aria-label="Close chat">×</button></div>
 <div class="tc-human"><a href="${TEL}">${IC.phone}Call</a><a href="${SMS}">${IC.msg}Text us</a></div></div>
 <div class="tc-log" role="log" aria-live="polite" aria-label="Conversation"></div>
 <form class="tc-form" autocomplete="off"><label class="tc-sr" for="tc-in">Message</label><input id="tc-in" type="text" placeholder="Type a message…" enterkeyhint="send"><button class="tc-send" type="submit" aria-label="Send">${IC.send}</button></form>
