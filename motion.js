@@ -1,4 +1,4 @@
-/* v9.4 motion: smooth wheel scrolling, staggered reveals in/out, count-ups, parallax, subtle scroll zoom, map entrance, FAQ accordion, phone fit (never scroll-scaled). Vanilla, rAF-batched, reduced-motion aware. */
+/* v9.5 motion: smooth wheel scrolling, play-once staggered reveals (16px, 500ms ease-out), count-ups, parallax, subtle scroll zoom, map entrance, FAQ accordion, phone fit (never scroll-scaled). Vanilla, rAF-batched, reduced-motion aware. */
 (()=>{const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -25,11 +25,11 @@ const cnt=el=>{const raw=el.textContent.trim(),m=raw.match(/^([^0-9]*)([\d,]+)(.
 
 if(RM||!('IntersectionObserver'in window))return;
 
-/* --- staggered reveals; elements ease in, and drift out when they leave above --- */
-const groups='.tiles,.steps,.stats,.svc-grid,.why,.testi,.feat,.faq,.cols,.acts,.roles';
+/* --- play-once staggered reveals: animate in the first time, then stay --- */
+const groups='.facts,.fields,.tiles,.steps,.stats,.svc-grid,.why,.testi,.feat,.faq,.cols,.acts,.roles';
 $$(groups).forEach(g=>[...g.children].forEach((c,i)=>{if(!c.closest('.iph')){c.classList.add('mv');c.style.setProperty('--i',i%8)}}));
 $$('section h2, section .eyebrow, section .lead').forEach(e=>{if(!e.closest('.rv')&&!e.closest('.mv'))e.classList.add('mv')});
-const io=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;if(e.isIntersecting){t.classList.add('in');t.classList.remove('out-up')}else if(e.boundingClientRect.top<0){t.classList.add('out-up');t.classList.remove('in')}else t.classList.remove('in','out-up')}),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
 $$('.mv').forEach(e=>io.observe(e));
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){cnt(e.target);cio.unobserve(e.target)}}),{threshold:.6});
 $$('.stat b,[data-count]').forEach(e=>cio.observe(e));
@@ -38,12 +38,12 @@ $$('.stat b,[data-count]').forEach(e=>cio.observe(e));
 const mb=$('.map-box');if(mb){mb.classList.add('pre');const mio=new IntersectionObserver(es=>{if(es[0].isIntersecting){const ps=$$('#usmap .st',mb);ps.forEach((p,i)=>p.style.transitionDelay=(Math.min(i,50)*14)+'ms');requestAnimationFrame(()=>mb.classList.remove('pre'));setTimeout(()=>ps.forEach(p=>p.style.transitionDelay=''),1600);mio.disconnect()}},{threshold:.25});mio.observe(mb)}
 
 /* --- parallax + subtle zoom (never the phone) --- */
-$$('.hx .hx-h,.hx .hx-lead,.page-hero h1').forEach((e,i)=>{e.classList.add('par');e.dataset.p=i?.06:.12});
+$$('.hx .hx-h,.hx .hx-lead,.page-hero h1').forEach((e,i)=>{e.classList.add('par');e.dataset.p=i?.04:.08});
 $$('.tile.big,.map-box,.svc-grid,.testi,.dark .wrap').forEach(e=>{if(!e.closest('.iph'))e.classList.add('zm')});
 const par=$$('.par'),zm=$$('.zm');let tick=false;
 const upd=()=>{tick=false;const vh=innerHeight,y=scrollY;
  par.forEach(e=>{if(y<vh*1.2)e.style.transform=`translate3d(0,${(y*e.dataset.p).toFixed(1)}px,0)`;});
- zm.forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const c=(r.top+r.height/2-vh/2)/vh;const z=1-Math.min(.05,Math.abs(c)*.06);e.style.setProperty('--z',z.toFixed(4))})};
+ zm.forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const c=(r.top+r.height/2-vh/2)/vh;const z=1-Math.min(.025,Math.abs(c)*.03);e.style.setProperty('--z',z.toFixed(4))})};
 addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
 
 /* --- buttery wheel scrolling (desktop mouse wheels only; touch & trackpads stay native) --- */
