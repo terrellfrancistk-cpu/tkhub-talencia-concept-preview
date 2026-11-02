@@ -10,7 +10,7 @@ const col=(v,mx)=>{const t=Math.log(1+v)/Math.log(1+mx);return ramp[Math.min(4,M
 let role='all',sel=null,first=true;const g=document.createElementNS(NS,'g'),pins=document.createElementNS(NS,'g');svg.append(g,pins);
 const codes=Object.keys(N).filter(k=>US_STATES[k]);const el={};
 codes.forEach(k=>{const p=document.createElementNS(NS,'path');p.setAttribute('d',US_STATES[k]);p.setAttribute('class','st');p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',N[k]);p.dataset.k=k;p.onclick=()=>pick(k);p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(k)}};g.append(p);el[k]=p});
-const paint=()=>{const mx=Math.max(...codes.map(k=>val(k,role)));codes.forEach(k=>{el[k].style.fill=col(val(k,role),mx);el[k].setAttribute('aria-label',`${N[k]}: ${val(k,role)} demo open shifts, ${RL[role]}`)});$('#heat-max').textContent=mx+'+';if(sel)panel(sel);else if(typeof usPanel==='function'&&$('#p-name').textContent)usPanel()};
+const paint=()=>{const mx=Math.max(...codes.map(k=>val(k,role)));codes.forEach(k=>{el[k].style.fill=(k==='TX'||C[k])?'#1F1B4D':'#E4E6EB';el[k].setAttribute('aria-label',`${N[k]}: ${val(k,role)} demo open shifts, ${RL[role]}`)});$('#heat-max').textContent=mx+'+';if(sel)panel(sel);else if(typeof usPanel==='function'&&$('#p-name').textContent)usPanel()};
 // smooth viewBox zoom
 let vb=[0,0,959,593];const setVB=a=>{vb=a;svg.setAttribute('viewBox',a.map(n=>n.toFixed(1)).join(' '))};
 const zoomTo=(t,now)=>{if(rm||now){setVB(t);return}const s=[...vb],t0=performance.now();const f=n=>{const p=Math.min(1,(n-t0)/650),e=1-Math.pow(1-p,3);setVB(s.map((v,i)=>v+(t[i]-v)*e));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
