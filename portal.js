@@ -15,7 +15,7 @@ help:['Help & tickets',()=>`<div class="cp-list">${row('Ticket #DEMO-77 · Invoi
 const show=k=>{$$('.cp-tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===k));B.innerHTML=TABS[k][1]();bind()};
 T.innerHTML=Object.entries(TABS).map(([k,v])=>`<button role="tab" data-tab="${k}">${v[0]}</button>`).join('');
 const bind=()=>{$$('[data-tab]').forEach(b=>b.onclick=()=>show(b.dataset.tab));$$('#cp-body form[data-cpf]').forEach(f=>f.onsubmit=e=>{e.preventDefault();const m=f.querySelector('.ok-msg');if(m&&m.textContent)m.classList.add('show')});$$('[data-ap]').forEach(b=>b.onclick=()=>{b.textContent='Approved ✓';b.disabled=true});$$('[data-pay]').forEach(b=>b.onclick=()=>b.closest('.tile').querySelector('.ok-msg').classList.add('show'))};
-const go=()=>{sessionStorage.cpDemo=1;L.hidden=true;A.hidden=false;show(location.hash.slice(1) in TABS?location.hash.slice(1):'overview');A.scrollIntoView()};
+const go=()=>{sessionStorage.cpDemo=1;L.hidden=true;A.hidden=false;show(location.hash.slice(1) in TABS?location.hash.slice(1):'overview');scrollTo(0,0)};
 $$('[data-cpgo]').forEach(b=>b.onclick=go);$('#cp-mf').onsubmit=e=>{e.preventDefault();$('#cp-sent').classList.add('show')};
 $('#cp-out').onclick=()=>{sessionStorage.removeItem('cpDemo');A.hidden=true;L.hidden=false};
 if(sessionStorage.cpDemo||location.hash==='#demo')go();})();
